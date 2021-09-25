@@ -15,6 +15,12 @@ export default {
       title: 'Title'
     },
     {
+      name: 'subtitle',
+      type: 'string',
+      title: 'Subtitle',
+      description: 'Subtitle for your website!'
+    },
+    {
       name: 'description',
       type: 'text',
       title: 'Description',
@@ -36,6 +42,11 @@ export default {
       description: 'Publish an author and set a reference to them here.',
       title: 'Author',
       to: [{type: 'person'}]
-    }
+    },
+    {
+      name: 'mainImage',
+      title: 'Main image',
+      type: 'figure'
+    },
   ]
 }
