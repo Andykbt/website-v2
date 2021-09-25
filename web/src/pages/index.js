@@ -10,7 +10,6 @@ import GraphQLErrorList from "../components/graphql-error-list";
 import ProjectPreviewGrid from "../components/project-preview-grid";
 import SEO from "../components/seo";
 import Layout from "../containers/layout";
-import Head from "../containers/sections/Head";
 
 export const query = graphql`
   query IndexPageQuery {
@@ -19,6 +18,10 @@ export const query = graphql`
       description
       keywords
       subtitle
+    }
+    sections: sections(limit: 5) { 
+      title 
+      description
     }
     projects: allSanitySampleProject(
       limit: 6
@@ -85,13 +88,12 @@ const IndexPage = props => {
     );
   }
 
+  console.log(data)
+
   return (
     <Layout>
       <SEO title={site.title} description={site.description} keywords={site.keywords} />
       <Container>
-        <h1 hidden>Welcome to {site.title}</h1>
-        {site.subtitle}
-        <Head />
         {projectNodes && (
           <ProjectPreviewGrid
             title="Latest projects"
