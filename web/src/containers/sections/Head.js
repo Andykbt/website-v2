@@ -7,7 +7,7 @@ const styles = {
 export default function Head() {
     return (
         <div style={styles}>
-                <h1>Testing</h1>
+                <h1>Andy Truong</h1>
         </div>
     )
 }
