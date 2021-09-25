@@ -4,11 +4,15 @@ import ProjectPreview from "./project-preview";
 
 import * as styles from "./project-preview-grid.module.css";
 
+const container = {
+
+}
+
 function ProjectPreviewGrid(props) {
   return (
     <div className={styles.root}>
       {props.title && <h2 className={styles.headline}>{props.title}</h2>}
-      <ul className={styles.grid}>
+      <ul className={styles.container}>
         {props.nodes &&
           props.nodes.map(node => (
             <li key={node.id}>

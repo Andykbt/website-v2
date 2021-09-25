@@ -1,12 +1,12 @@
 import React from 'react'
 import wave from '../../assets/wave-haikei.svg'
 const styles = {
-    
+    height: '75vh',
 }
 
 export default function Head() {
     return (
-        <div style={{backgroundImage: 'url(./assets/wave-haikei.svg)'}}>
+        <div style={styles}>
                 <h1>Testing</h1>
         </div>
     )
