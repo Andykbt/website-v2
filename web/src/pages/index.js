@@ -18,7 +18,6 @@ export const query = graphql`
       title
       description
       keywords
-      subtitle
     }
     projects: allSanitySampleProject(
       limit: 6
