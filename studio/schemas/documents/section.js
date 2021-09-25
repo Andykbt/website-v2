@@ -9,11 +9,11 @@ export default {
         title: 'Section Name'
       },
       {
-        name: 'description',
-        type: 'text',
-        title: 'Description',
+        name: 'content',
+        title: 'Content',
+        type: 'simplePortableText',
         description: 'What content do you want to have in this section?'
-      }
-    ]
+      },
+    ] 
   }
   

@@ -10,6 +10,7 @@ import GraphQLErrorList from "../components/graphql-error-list";
 import ProjectPreviewGrid from "../components/project-preview-grid";
 import SEO from "../components/seo";
 import Layout from "../containers/layout";
+import Section from "../components/section/section";
 
 export const query = graphql`
   query IndexPageQuery {
@@ -19,9 +20,25 @@ export const query = graphql`
       keywords
       subtitle
     }
-    sections: sections(limit: 5) { 
-      title 
-      description
+    sections: allSanitySection {
+      edges {
+        node {
+          id
+          title
+          content {
+            _key
+            _type
+            style 
+            list
+            children {
+              _key
+              _type
+              marks
+              text
+            }
+          }
+        }
+      }
     }
     projects: allSanitySampleProject(
       limit: 6
@@ -81,19 +98,26 @@ const IndexPage = props => {
         .filter(filterOutDocsWithoutSlugs)
         .filter(filterOutDocsPublishedInTheFuture)
     : [];
+  
+  const sectionNodes = (data || {}).sections
+    ? mapEdgesToNodes(data.sections)
+    : [];
 
   if (!site) {
     throw new Error(
-      'Missing "Site settings". Open the studio at http://localhost:3333 and add some content to "Site settings" and restart the development server.'
+      'Missing "Site settings".'
     );
   }
 
   console.log(data)
+  console.log(projectNodes)
+  console.log(sectionNodes)
 
   return (
     <Layout>
       <SEO title={site.title} description={site.description} keywords={site.keywords} />
       <Container>
+        <Section node={projectNodes[0]}/>
         {projectNodes && (
           <ProjectPreviewGrid
             title="Latest projects"

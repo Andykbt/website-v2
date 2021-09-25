@@ -2,7 +2,6 @@ import { Link } from "gatsby";
 import React from "react";
 import Icon from "./assets";
 import { cn } from "../lib/helpers";
-import wave from './assets/layered-waves-haikei.svg'
 
 import * as styles from "./header.module.css";
 
