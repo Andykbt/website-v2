@@ -9,11 +9,17 @@
   width: 720px;
 }
 
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .title {
   composes: responsiveTitle1 from './typography.module.css';
 }
 
-.text {
+.container {
   padding: 2em;
 }
 

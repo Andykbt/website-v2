@@ -30,7 +30,7 @@ export default function Button({background, colour, to, submit, title, ...styles
                         style={{ color: colour }}
                     />
                 : to ?
-                    <a href={to} style={{ color: colour }}>{title}</a>
+                    <a href={to} style={{ color: colour }} target={'_blank'}>{title}</a>
                 :   <span style={{ color: colour }}>{title}</span>
                 }
             </div>

@@ -9,6 +9,12 @@ export default {
         title: 'Section Name'
       },
       {
+        name: 'publishedAt',
+        title: 'Published at',
+        description: 'You can use this field to schedule projects where you show them',
+        type: 'datetime'
+      },
+      {
         name: 'content',
         title: 'Content',
         type: 'simplePortableText',
@@ -20,7 +26,7 @@ export default {
         title: 'Collection',
         type: 'array',
         of: [{type: 'logo'}],
-      }
+      },
     ] 
   }
   

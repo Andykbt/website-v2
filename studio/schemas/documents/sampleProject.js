@@ -26,6 +26,18 @@ export default {
       }
     },
     {
+      name: 'codeURL',
+      title: 'Code URL',
+      type: 'url',
+      description: 'What is the url to your code'
+    },
+    {
+      name: 'projectURL',
+      title: 'Project URL',
+      type: 'url',
+      description: 'What is the url to your project'
+    },
+    {
       name: 'publishedAt',
       title: 'Published at',
       description: 'You can use this field to schedule projects where you show them',

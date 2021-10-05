@@ -20,8 +20,10 @@ export const query = graphql`
       keywords
       subtitle
     }
-    sections: allSanitySection {
-      edges {
+    sections: allSanitySection(
+      sort: { fields: [publishedAt], order: ASC }
+    ) {
+      edges {   
         node {
           id
           title
@@ -88,6 +90,8 @@ export const query = graphql`
           slug {
             current
           }
+          codeURL
+          projectURL
         }
       }
     }
@@ -146,6 +150,18 @@ const IndexPage = props => {
             browseMoreHref="/archive/"
           />
         )}
+
+        <Section 
+          node={sectionNodes[2]}
+          showHeight={'0.1'}
+          hideHeight={'0.4'}
+        />
+
+        <Section 
+          node={sectionNodes[3]}
+          showHeight={'0.1'}
+          hideHeight={'0.4'}
+        />
       </Container>
     </Layout>
   );

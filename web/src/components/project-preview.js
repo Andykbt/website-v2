@@ -18,6 +18,8 @@ function ProjectPreview(props) {
     config: config.wobbly
   })
 
+  console.log(props)
+
   return (
     <div className={styles.root}>
       {props.mainImage && props.mainImage.asset && (
@@ -29,49 +31,32 @@ function ProjectPreview(props) {
             height={420}
           />
       )}
-      
-      <div className={styles.text}>
-        <h3 className={cn(responsiveTitle3, styles.title)}>{props.title}</h3>
-        {props._rawExcerpt && (
-          <div className={styles.excerpt}>
-            <BlockText blocks={props._rawExcerpt} />
-          </div>
-        )}
 
-          <Button to={`/project/${props.slug.current}`} title={'Read More'}/>
+      <div className={styles.container}>
+        <section>
+          <Link to={`/project/${props.slug.current}`}><h3 className={cn(responsiveTitle3, styles.title)}>{props.title}</h3></Link>
+          {props._rawExcerpt && (
+            <div className={styles.excerpt}>
+              <BlockText blocks={props._rawExcerpt} />
+            </div>
+          )}
+        </section>
+
+        <section>
+          <Button to={`/project/${props.slug.current}`} title={'Read More'} background={'#139675'}/>
           <hr />
           <div style={{display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gridGap: '0.5em'}}>
-            <Button to={`/project/${props.slug.current}`} title={'View Project'}/>
-            <Button to={`/project/${props.slug.current}`} title={'Read Code'}/>
+            {props.projectURL &&
+              <Button to={props.projectURL} title={'View Project'}/>
+            }
+
+            {props.codeURL &&
+              <Button to={props.codeURL} title={'Read Code'}/>
+            }
           </div>
+        </section>
       </div>
     </div>
-    // <animated.a
-    //   className={styles.root}
-    //   href={`/project/${props.slug.current}`}
-    //   ref={ref} 
-    //   style={pop}
-    //   onMouseEnter={() => setHover(true)}
-    //   onMouseLeave={() => setHover(false)}
-    //   >
-    //     {props.mainImage && props.mainImage.asset && (
-    //       <img
-    //         src={imageUrlFor(buildImageObj(props.mainImage))
-    //           .url()}
-    //         alt={props.mainImage.alt}
-    //         width={420}
-    //         height={420}
-    //       />
-    //     )}
-    //     <div className={styles.text}>
-    //       <h3 className={cn(responsiveTitle3, styles.title)}>{props.title}</h3>
-    //       {props._rawExcerpt && (
-    //         <div className={styles.excerpt}>
-    //           <BlockText blocks={props._rawExcerpt} />
-    //         </div>
-    //       )}
-    //     </div>
-    // </animated.a>
   );
 }
 
