@@ -67,6 +67,7 @@ export default function Section({node, showHeight, hideHeight, isAnimated}) {
 
     function changeBackground(e, colour) {
         e.target.style.fill = colour;
+        e.target.style.scale = '1.1';
     }
 
     const body = 
