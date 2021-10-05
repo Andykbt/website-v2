@@ -1,0 +1,26 @@
+.container {
+    z-index: 1;
+    position: fixed;
+    bottom: 0;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.container:after {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 90px;
+    margin: 0px auto;
+    background-color: #139675;
+}
+
+.socialLink {
+    transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1);
+}
+
+.socialLink:hover {
+    transform: translate(0, -3px);
+    color: #6FF8DA;
+  }

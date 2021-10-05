@@ -11,6 +11,11 @@ export default {
       type: 'string'
     },
     {
+      title: 'WIP?',
+      name: 'wip',
+      type: 'boolean'
+    },
+    {
       name: 'slug',
       title: 'Slug',
       type: 'slug',
@@ -25,6 +30,16 @@ export default {
       title: 'Published at',
       description: 'You can use this field to schedule projects where you show them',
       type: 'datetime'
+    },
+    {
+      name: 'keywords',
+      type: 'array',
+      title: 'Keywords',
+      description: 'Add keywords that describes your portfolio.',
+      of: [{type: 'string'}],
+      options: {
+        layout: 'tags'
+      }
     },
     {
       name: 'excerpt',

@@ -1,0 +1,55 @@
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(220px, 1fr));
+    background-color: white;
+    padding: 3em;
+    border-radius: 15px;
+}
+
+.grid textarea {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    height: 115px;
+    min-height: 115px;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    width: 100%;
+    resize: vertical;
+}
+
+.formSection {
+    font-family: var(--font-family-sans);
+    grid-column: 1 / span 3;
+    flex-direction: column;
+    display: flex;
+}
+
+.formSection label {
+    pointer-events: none;
+    font-size: 14px;
+    line-height: 25px;
+    margin-bottom: 4px;
+    color:#171933;
+    font-weight: 600;
+
+}
+
+.formSection input, .formSection textarea {
+    border: 1px solid #e1e2eb;
+    background-color: #fff;
+    width: 100%;
+    padding: 9px 20px;
+    color:#bebfcc;
+    caret-color:#bebfcc;
+    height: 49px;
+    box-sizing: border-box;
+    font-size: 14px;
+    line-height: 29px ;
+    box-shadow: inset 0 2px 4px 0 rgba(206,209,224,.2);
+    border-radius: 3px;
+}
+
+.formSection input:focus, .formSection textarea:focus {
+    border: 1px solid #4F23E2;
+    color: #888a9e;
+}

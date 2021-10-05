@@ -11,7 +11,7 @@ const container = {
 function ProjectPreviewGrid(props) {
   return (
     <div className={styles.root} id="Projects">
-      {props.title && <h2 className={styles.headline}>{props.title}</h2>}
+      {props.title && <h1 className={styles.headline}>{props.title}</h1>}
       <ul className={styles.container}>
         {props.nodes &&
           props.nodes.map(node => (

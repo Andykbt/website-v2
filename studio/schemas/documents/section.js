@@ -14,6 +14,13 @@ export default {
         type: 'simplePortableText',
         description: 'What content do you want to have in this section?'
       },
+      {
+        name: 'collection',
+        description: 'Add a collection to your section',
+        title: 'Collection',
+        type: 'array',
+        of: [{type: 'logo'}],
+      }
     ] 
   }
   

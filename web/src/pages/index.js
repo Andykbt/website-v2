@@ -26,15 +26,28 @@ export const query = graphql`
           id
           title
           content {
-            _key
             _type
             style 
             list
             children {
-              _key
               _type
               marks
               text
+            }
+          }
+          collection {
+            caption
+            alt
+            colour
+            svg {
+              _type
+              style
+              list
+              children {
+                _type
+                marks
+                text
+              }
             }
           }
         }
@@ -109,19 +122,26 @@ const IndexPage = props => {
     );
   }
 
-  console.log(data)
-  console.log(projectNodes)
-  console.log(sectionNodes)
-
   return (
-    <Layout>
+    <Layout showIntro={true}>
       <SEO title={site.title} description={site.description} keywords={site.keywords} />
       <Container>
-        <Section node={sectionNodes[0]}/>
-        {/* <Section /> */}
+        <Section
+          node={sectionNodes[0]}
+          showHeight={'0.1'}
+          hideHeight={'0.75'}
+        />
+
+        <Section 
+          node={sectionNodes[1]}
+          showHeight={'0.1'}
+          hideHeight={'0.4'}
+          isAnimated={true}
+        />
+
         {projectNodes && (
           <ProjectPreviewGrid
-            title="Latest projects"
+            title="Some Things I've Built"
             nodes={projectNodes}
             browseMoreHref="/archive/"
           />

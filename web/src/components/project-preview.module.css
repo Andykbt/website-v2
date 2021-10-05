@@ -1,12 +1,12 @@
 .root {
-  display: flex;
-  color: inherit;
+  box-shadow: 0 70px 140px 0 rgba(130,136,171,.2);
   text-decoration: none;
-  border: solid 1px black;
-  width: 720px;
   margin-bottom: 50px;
   border-radius: 25px;
   overflow: hidden;
+  color: inherit;
+  display: flex;
+  width: 720px;
 }
 
 .title {

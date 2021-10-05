@@ -4,17 +4,19 @@ import Header from "./header";
 import "../styles/layout.css";
 import * as styles from "./layout.module.css";
 
-const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle, siteSubtitle }) => (
+import wave from './assets/footer-wave-haikei.svg'
+import Socials from "../components/Social/Socials";
+import Footer from "./Footer/Footer";
+
+const Layout = ({ children, showNav, showIntro, siteTitle, siteSubtitle }) => (
   <>
-    <Header siteTitle={siteTitle} siteSubtitle={siteSubtitle} onHideNav={onHideNav} onShowNav={onShowNav} showNav={showNav} />
+    <Header siteTitle={siteTitle} siteSubtitle={siteSubtitle} showNav={showNav} showIntro={showIntro} />
+    <Socials />
     <div className={styles.content}>{children}</div>
     <footer className={styles.footer}>
+      <img src={wave}/>
       <div className={styles.footerWrapper}>
-        <div className={styles.siteInfo}>
-          © {new Date().getFullYear()}, Built with <a href="https://www.sanity.io">Sanity</a> &amp;
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </div>
+        <Footer/>
       </div>
     </footer>
   </>

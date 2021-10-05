@@ -1,0 +1,36 @@
+.container {
+    position: relative;
+    font-size: 14px;
+}
+
+.background {
+    padding: 22px;
+    border-radius: 5px;
+}
+
+.child {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0%;
+    display: flex;
+}
+
+.child input[type='submit'], .child a, .child span {
+    background: transparent;
+    font-weight: bold;
+    outline: none;
+    border: none;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.child input[type='submit']:focus {
+    outline: none;
+    border: none;
+}

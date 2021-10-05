@@ -10,10 +10,12 @@ import person from './documents/person'
 import sampleProject from './documents/sampleProject'
 import siteSettings from './documents/siteSettings'
 import section from './documents/section'
+import navigation from './documents/navigation'
 
 // Object types
 import bioPortableText from './objects/bioPortableText'
 import figure from './objects/figure'
+import logo from './objects/logo'
 import projectMember from './objects/projectMember'
 import projectPortableText from './objects/projectPortableText'
 import simplePortableText from './objects/simplePortableText'
@@ -29,6 +31,7 @@ export default createSchema({
     // { type: 'typename' } in other document schemas
     bioPortableText,
     figure,
+    logo,
     projectMember,
     projectPortableText,
     simplePortableText,
@@ -38,6 +41,7 @@ export default createSchema({
     person,
     sampleProject,
     section,  
+    navigation,
     siteSettings,
   ])
 })
