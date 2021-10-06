@@ -153,7 +153,7 @@ const IndexPage = props => {
 
         <Section 
           node={sectionNodes[2]}
-          showHeight={'0.1'}
+          showHeight={'0'}
           hideHeight={'0.4'}
         />
 
