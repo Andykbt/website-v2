@@ -10,16 +10,6 @@ import * as styles from "./project-preview.module.css";
 import { responsiveTitle3 } from "./typography.module.css";
 
 function ProjectPreview(props) {
-  const [hover, setHover] = useState(false)
-  const ref = useRef();
-
-  const pop = useSpring({
-    scale: hover ? 1.01 : 0.99,
-    config: config.wobbly
-  })
-
-  console.log(props)
-
   return (
     <div className={styles.root}>
       {props.mainImage && props.mainImage.asset && (

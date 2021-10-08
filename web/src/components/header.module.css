@@ -7,7 +7,16 @@
   position: relative;
   z-index: 0;
   height: 100vh;
+  overflow: hidden;
 }
+
+.root > img {
+  transform: rotate(180deg);
+  height: 220%;
+  position: absolute;
+  z-index: -1;
+}
+
 
 .content {
   display: flex;
@@ -61,6 +70,11 @@
 
 .navItem {
   transition: transform 0.25s cubic-bezier(0.645,0.045,0.355,1);
+}
+
+.navItem:hover {
+  color: var(--color-turquoise);
+  /* box-shadow: 0 1px 3px rgba(0,0,0,0.25) */
 }
 
 .nav {

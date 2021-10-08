@@ -12,6 +12,11 @@ import SEO from "../components/seo";
 import Layout from "../containers/layout";
 import Section from "../components/Section/Section";
 
+import logo from '../components/assets/logo.png'
+
+const favicon = document.getElementById("favicon");
+favicon.href = logo
+
 export const query = graphql`
   query IndexPageQuery {
     site: sanitySiteSettings(_id: { regex: "/(drafts.|)siteSettings/" }) {

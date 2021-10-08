@@ -65,11 +65,6 @@ export default function Section({node, showHeight, hideHeight, isAnimated}) {
         return output;
     }   
 
-    function changeBackground(e, colour) {
-        e.target.style.fill = colour;
-        e.target.style.scale = '1.1';
-    }
-
     const body = 
         <div>
             <h1 style={{textAlign: 'center'}}>{node.title}</h1>
@@ -80,12 +75,13 @@ export default function Section({node, showHeight, hideHeight, isAnimated}) {
                     <animated.div style={{...style}}>
                         <div
                             onMouseEnter={(e) => {
-                                e.target.style.fill = item.colour
-                                e.target.style.scale = 1.2
+                                e.target.style.fill = item.colour;
+                                e.target.style.transform = 'scale(1.2)';
                             }}
                             onMouseLeave={(e) => {
-                                e.target.style.fill = 'black'
-                                e.target.style.scale = 1.0
+                                e.target.style.fill = 'black';
+                                e.target.style.transform = 'scale(1)';
+
                             }}
                             style={{width: 60, height: 60, transition: 'all ease-in-out 0.1s'}}
                             dangerouslySetInnerHTML={{__html: item.svg[0].children[0].text}}

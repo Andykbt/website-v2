@@ -6,7 +6,9 @@ import { useSpringRef, useTransition, animated, useChain } from 'react-spring'
 
 import * as styles from "./header.module.css";
 import { RiArrowDownSLine } from 'react-icons/ri'
-import wave from './assets/layered-wave-haikei.svg'
+
+import wave from './assets/Purple_Waves_2.svg'
+import logo from './assets/logo.png'
 
 function Header({ showNav, siteTitle, siteSubtitle, showIntro }) {
   const links = [
@@ -27,7 +29,7 @@ function Header({ showNav, siteTitle, siteSubtitle, showIntro }) {
   const items = [
     ({ style }) => <animated.h1 style={{ ...style, position: 'relative', fontSize: 75, marginBottom: 0}}>{siteTitle}</animated.h1>,
     ({ style }) => <animated.p style={{ ...style, position: 'relative', }}>{siteSubtitle}</animated.p>,
-    ({ style }) => <animated.div style={{ ...style, position: 'relative', width: 250, height: 250, borderRadius: '50%', backgroundColor: 'cyan'}}></animated.div>
+    ({ style }) => <animated.img src={logo} style={{ ...style, position: 'relative', width: 250, height: 250, borderRadius: '50%', backgroundColor: 'cyan'}}></animated.img>
   ]
 
   const transitionRef = useSpringRef()
@@ -50,14 +52,15 @@ function Header({ showNav, siteTitle, siteSubtitle, showIntro }) {
   useChain([transitionRef, transitionRef1], [0, 1.35])
 
   return (
-    <div className={styles.root} style={{ backgroundImage: `url(${wave})` }}>
+    <div className={styles.root}>
+      {showIntro && <img src={wave} style={{transform: 'rotate(180deg)'}}></img>}
       <div className={styles.wrapper}>
         <nav className={cn(styles.nav, showNav && styles.showNav)}>
           <ul>
             <li style={{display: 'flex', color: 'white'}}>
               {transitions((style, item) => (
                 <animated.a className={styles.navItem} href={item.link} style={{...style, marginRight: 15, marginLeft: 15}}>{item.title}</animated.a>
-              ))}
+                ))}
             </li>
           </ul>
         </nav>

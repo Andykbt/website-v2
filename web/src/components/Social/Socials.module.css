@@ -13,7 +13,8 @@
     width: 1px;
     height: 90px;
     margin: 0px auto;
-    background-color: #6FF8DA;
+    background-color: var(--color-emerald);
+
 }
 
 .socialLink {
@@ -22,5 +23,5 @@
 
 .socialLink:hover {
     transform: translate(0, -3px);
-    color: #6FF8DA;
+    color: var(--color-emerald);
   }
