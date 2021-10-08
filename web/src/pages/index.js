@@ -12,10 +12,9 @@ import SEO from "../components/seo";
 import Layout from "../containers/layout";
 import Section from "../components/Section/Section";
 
-import logo from '../components/assets/logo.png'
-
-const favicon = document.getElementById("favicon");
-favicon.href = logo
+// import logo from '../components/assets/logo2.png'
+// const favicon = document.getElementById("favicon");
+// favicon.href = logo
 
 export const query = graphql`
   query IndexPageQuery {
