@@ -5,20 +5,8 @@ import Button from '../Button/Button';
 import * as classes from './Footer.module.css'
 
 export default function Footer() {
-    const { register, handleSubmit, errors } = useForm();
-    const [hover, setHover] = useState(false)
-
-    const onSubmit = (data) => {
-        console.log(data)
-    }
-
-    const pop = useSpring({
-        transform: hover ? 'perspective(800px) translate3d(0px, 0px, 43px)' : 'perspective(800px) translate3d(0px, 0px, 0px)',
-        config: config.wobbly
-    })
-
     return (
-        <div style={{display: 'flex', alignItems: 'center', flexDirection: 'column', marginTop: 250}}>
+        <div style={{display: 'flex', alignItems: 'center', flexDirection: 'column'}}>
             <h1 style={{color: 'white'}}>Interested to work on something?</h1>
 
             <div style={{width: '50%'}}>

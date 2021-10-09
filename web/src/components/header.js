@@ -49,40 +49,45 @@ function Header({ showNav, siteTitle, siteSubtitle, showIntro }) {
     enter:  { bottom: 0, opacity: 1 },
   })
 
-  useChain([transitionRef, transitionRef1], [0, 1.35])
+  useChain([transitionRef, transitionRef1], [0, 0.75])
 
   return (
     <div className={styles.root}>
       {showIntro && <img src={wave} style={{transform: 'rotate(180deg)'}}></img>}
-      <div className={styles.wrapper}>
-        <nav className={cn(styles.nav, showNav && styles.showNav)}>
-          <ul>
-            <li style={{display: 'flex', color: 'white'}}>
-              {transitions((style, item) => (
-                <animated.a className={styles.navItem} href={item.link} style={{...style, marginRight: 15, marginLeft: 15}}>{item.title}</animated.a>
-                ))}
-            </li>
-          </ul>
-        </nav>
-      </div>
+      <header>
+        <div className={styles.wrapper}>
+          <nav className={cn(styles.nav, showNav && styles.showNav)}>
+            <ul>
+              <li style={{display: 'flex', color: 'white'}}>
+                {transitions((style, item) => (
+                  <animated.a className={styles.navItem} href={item.link} style={{...style, marginRight: 15, marginLeft: 15}}>{item.title}</animated.a>
+                  ))}
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
 
       {showIntro &&
-        <div className={styles.content}>
-          {transitions2((style, item) => {
-            const Item = item
-            return <Item style={style} />
-          })}
-        </div>
+        <>
+          <div className={styles.content}>
+            {transitions2((style, item) => {
+              const Item = item
+              return <Item style={style} />
+            })}
+          </div>
+        
+          <a className={styles.arrowDown} onClick={() => {
+            window.scrollTo({
+              top: window.innerHeight,
+              left: 0,
+              behavior: 'smooth'
+            });}}>
+            <RiArrowDownSLine size={'5em'}/>
+          </a>
+        </>
       }
 
-      <a className={styles.arrowDown} onClick={() => {
-        window.scrollTo({
-          top: window.innerHeight,
-          left: 0,
-          behavior: 'smooth'
-        });}}>
-        <RiArrowDownSLine size={'5em'}/>
-      </a>
     </div>
   );
 }

@@ -4,10 +4,6 @@ import ProjectPreview from "./project-preview";
 
 import * as styles from "./project-preview-grid.module.css";
 
-const container = {
-
-}
-
 function ProjectPreviewGrid(props) {
   return (
     <div className={styles.root} id="Projects">

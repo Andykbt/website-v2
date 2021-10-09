@@ -1,3 +1,5 @@
+@import '../styles/custom-media.css';
+
 .root {
   box-shadow: 0 70px 140px 0 rgba(130,136,171,.2);
   text-decoration: none;
@@ -6,7 +8,13 @@
   overflow: hidden;
   color: inherit;
   display: flex;
-  width: 720px;
+  flex-direction: column;
+}
+  
+@media (--media-min-medium) {
+  .root {
+    flex-direction: row;
+  }
 }
 
 .container {

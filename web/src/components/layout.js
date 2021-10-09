@@ -12,18 +12,19 @@ import Footer from "./Footer/Footer";
 const Layout = ({ children, showNav, showIntro, siteTitle, siteSubtitle }) => (
   <>
     <Header siteTitle={siteTitle} siteSubtitle={siteSubtitle} showNav={showNav} showIntro={showIntro} />
-    {/* <img src={'./assets'} /> */}
 
     <Socials />
     <div className={styles.content}>{children}</div>
-    <footer className={styles.footer}>
-      <img src={wave}/>
-
+    <footer className={styles.footer} style={{backgroundImage: `url(${wave})`}}>
       <div className={styles.footerWrapper}>
         <Footer/>
       </div>
     </footer> 
   </>
 );
+
+Layout.defaultProps = {
+  showIntro: false,
+}
 
 export default Layout;
