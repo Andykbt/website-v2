@@ -12,10 +12,6 @@ import SEO from "../components/seo";
 import Layout from "../containers/layout";
 import Section from "../components/Section/Section";
 
-// import logo from '../components/assets/logo2.png'
-// const favicon = document.getElementById("favicon");
-// favicon.href = logo
-
 export const query = graphql`
   query IndexPageQuery {
     site: sanitySiteSettings(_id: { regex: "/(drafts.|)siteSettings/" }) {
@@ -61,7 +57,7 @@ export const query = graphql`
     }
     projects: allSanitySampleProject(
       limit: 6
-      sort: { fields: [publishedAt], order: DESC }
+      sort: { fields: [publishedAt], order: ASC }
       filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }
     ) {
       edges {

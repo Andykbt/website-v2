@@ -6,8 +6,11 @@
   background-size: cover;
   position: relative;
   z-index: 0;
-  height: 100vh;
   overflow: hidden;
+}
+
+.fullHeight {
+  height: 100vh;
 }
 
 .root > img {

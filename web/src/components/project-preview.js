@@ -1,5 +1,5 @@
 import { Link } from "gatsby";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSpring, animated, config } from 'react-spring'
 import { cn, buildImageObj } from "../lib/helpers";
 import { imageUrlFor } from "../lib/image-url";
@@ -10,16 +10,32 @@ import * as styles from "./project-preview.module.css";
 import { responsiveTitle3 } from "./typography.module.css";
 
 function ProjectPreview(props) {
+  const [hover, setHover] = useState(false)
+  
+  const rotate = useSpring({
+    transform: hover
+      ? 'scale(1.075) rotate(2.5deg)'
+      : 'scale(1.05) rotate(0deg)',
+    config: config.wobbly
+  })
+
+  useEffect(() => {
+    console.log(hover)
+  , [hover]})
+
   return (
-    <div className={styles.root}>
+    <div className={styles.root} onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
       {props.mainImage && props.mainImage.asset && (
-          <img
-            src={imageUrlFor(buildImageObj(props.mainImage))
-              .width(420)
-              .height(420)
-              .url()}
-            alt={props.mainImage.alt}
-          />
+          <section className={styles.imgWrapper}>
+            <animated.img
+              src={imageUrlFor(buildImageObj(props.mainImage))
+                .width(425)
+                .height(425)
+                .url()}
+              alt={props.mainImage.alt}
+              style={rotate}
+            />
+          </section>
       )}
 
       <div className={styles.container}>

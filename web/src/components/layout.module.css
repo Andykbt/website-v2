@@ -11,15 +11,20 @@
 }
 
 .footer {
-  background-position: bottom;
-  background-size: cover;
+  padding-top: 22%;
+  position: relative;
+}
+
+@media (--media-max-medium) {
+  .footer h1 {
+    display: none;
+  }
 }
 
 .footer > img {
-  z-index: -1;
-  width: 100%;
   position: absolute;
-  transform: translateY(-60%);
+  z-index: -1;
+  bottom: 0;
 }
 
 .footerWrapper {

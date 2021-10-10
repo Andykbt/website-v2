@@ -52,7 +52,7 @@ function Header({ showNav, siteTitle, siteSubtitle, showIntro }) {
   useChain([transitionRef, transitionRef1], [0, 0.75])
 
   return (
-    <div className={styles.root}>
+    <div className={cn(styles.root, showIntro && styles.fullHeight)}>
       {showIntro && <img src={wave} style={{transform: 'rotate(180deg)'}}></img>}
       <header>
         <div className={styles.wrapper}>

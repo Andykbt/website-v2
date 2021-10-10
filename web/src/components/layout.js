@@ -4,7 +4,7 @@ import Header from "./header";
 import "../styles/layout.css";
 import * as styles from "./layout.module.css";
 
-import wave from './assets/Purple_Waves.svg'
+import wave from './assets/Purple_Waves_2.svg'
 
 import Socials from "../components/Social/Socials";
 import Footer from "./Footer/Footer";
@@ -15,11 +15,13 @@ const Layout = ({ children, showNav, showIntro, siteTitle, siteSubtitle }) => (
 
     <Socials />
     <div className={styles.content}>{children}</div>
-    <footer className={styles.footer} style={{backgroundImage: `url(${wave})`}}>
+    <footer className={styles.footer}>
+    {/* <footer className={styles.footer} style={{backgroundImage: `url(${wave})`}}> */}
+      <img src={wave} />
       <div className={styles.footerWrapper}>
         <Footer/>
       </div>
-    </footer> 
+    </footer>
   </>
 );
 
