@@ -16,7 +16,7 @@ function Project(props) {
 
   return (
     <Container>
-      <article className={styles.root}>
+      <article className={styles.root} id={'Projects'}>
       {props.mainImage && mainImage.asset && (
       <div className={styles.mainImage}>
         <img

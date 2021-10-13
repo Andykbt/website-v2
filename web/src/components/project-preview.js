@@ -14,7 +14,7 @@ function ProjectPreview(props) {
   
   const rotate = useSpring({
     transform: hover
-      ? 'scale(1.075) rotate(2.5deg)'
+      ? 'scale(1.075) rotate(1.5deg)'
       : 'scale(1.05) rotate(0deg)',
     config: config.wobbly
   })
@@ -22,6 +22,8 @@ function ProjectPreview(props) {
   useEffect(() => {
     console.log(hover)
   , [hover]})
+
+  // console.log(props)
 
   return (
     <div className={styles.root} onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
