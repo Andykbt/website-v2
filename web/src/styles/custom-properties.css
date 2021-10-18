@@ -1,6 +1,8 @@
+@import url("https://use.typekit.net/hmr0jlb.css");
+
 :root {
   --font-family-sans: -apple-system, BlinkMacSystemFont, sans-serif;
-
+  --font-family-best-choice: best-choice, mono;
   --color-black: #202123;
   --color-dark-gray: #32373e;
   --color-gray: #697a90;

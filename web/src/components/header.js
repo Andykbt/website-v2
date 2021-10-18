@@ -17,12 +17,8 @@ function Header({ showNav, siteTitle, siteSubtitle, showIntro }) {
       link: '/',
     },
     {
-      title: "Archive",
-      link: '/archive/',
-    },
-    {
       title: "Projects",
-      link: '#Projects',
+      link: '/projects/',
     },
   ];
 

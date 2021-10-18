@@ -79,9 +79,26 @@
   transition: transform 0.25s cubic-bezier(0.645,0.045,0.355,1);
 }
 
+.navItem:after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 3px;
+  left: 50%;
+  position: absolute;
+  background: var(--color-emerald);
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+
+.navItem:hover:after {
+  width: 100%; 
+  left: 0; 
+}
+
 .navItem:hover {
   color: var(--color-turquoise);
-  /* box-shadow: 0 1px 3px rgba(0,0,0,0.25) */
 }
 
 .nav {

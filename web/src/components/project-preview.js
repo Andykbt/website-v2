@@ -19,12 +19,6 @@ function ProjectPreview(props) {
     config: config.wobbly
   })
 
-  useEffect(() => {
-    console.log(hover)
-  , [hover]})
-
-  // console.log(props)
-
   return (
     <div className={styles.root} onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
       {props.mainImage && props.mainImage.asset && (

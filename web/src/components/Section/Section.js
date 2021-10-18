@@ -27,8 +27,6 @@ export default function Section({node, showHeight, hideHeight, isAnimated}) {
             : "0 70px 140px 0 rgba(130,136,171,.2)",
     })
 
-
-
     const transitions = useTransition(show ? node.collection : [], {
         delay: 500,
         trail: 150,

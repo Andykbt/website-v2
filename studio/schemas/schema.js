@@ -11,6 +11,7 @@ import sampleProject from './documents/sampleProject'
 import siteSettings from './documents/siteSettings'
 import section from './documents/section'
 import navigation from './documents/navigation'
+import blog from './documents/blog'
 
 // Object types
 import bioPortableText from './objects/bioPortableText'
@@ -32,6 +33,7 @@ export default createSchema({
     bioPortableText,
     figure,
     logo,
+    blog,
     projectMember,
     projectPortableText,
     simplePortableText,
