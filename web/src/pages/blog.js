@@ -10,20 +10,26 @@ import { mapEdgesToNodes, filterOutDocsWithoutSlugs } from "../lib/helpers";
 import { responsiveTitle1 } from "../components/typography.module.css";
 
 export const query = graphql`
-    query testQuery {
-        site: sanitySiteSettings(_id: { regex: "/(drafts.|)siteSettings/" }) {
-            title
-            description
-            keywords
-            subtitle
-        }
-
-        articles: allBlogArticle (
-            limit: 5
-        ) {
-            title
+query BlogPageQuery {
+    articles: allSanityBlogArticle {
+        edges {
+            node {
+                id
+                title
+                mainImage {
+                    asset {
+                        _id
+                    }
+                    alt
+                }
+                _rawExcerpt
+                slug {
+                    current
+                }
+            }
         }
     }
+}
 `;
 
 const BlogPage = props => {
