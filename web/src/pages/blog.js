@@ -40,10 +40,10 @@ const items = [
 const BlogPage = props => {
     const { data, errors } = props;
 
-    const articleNodes =
+    // const articleNodes =
         // data && data.articles && mapEdgesToNodes(data.articles).filter(filterOutDocsWithoutSlugs);
 
-    console.log(articleNodes)
+    // console.log(articleNodes)
 
     if (errors) {
         return(
@@ -57,10 +57,10 @@ const BlogPage = props => {
         <Layout showIntro={true} headerItems={items}>
             <SEO title="Blog" />
             <Container>
-                {articleNodes && articleNodes.length > 0 ?
+                {/* {articleNodes && articleNodes.length > 0 ?
                     <>
                     </>
-                : <h1 className={responsiveTitle1}>There isn't anything here right now, check it out again at some time later!</h1>}
+                : <h1 className={responsiveTitle1}>There isn't anything here right now, check it out again at some time later!</h1>} */}
             </Container>
         </Layout>
     );
