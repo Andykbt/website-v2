@@ -7,7 +7,7 @@ import SEO from "../components/seo";
 import Layout from "../containers/layout";
 import { mapEdgesToNodes, filterOutDocsWithoutSlugs } from "../lib/helpers";
 
-import { responsiveTitle1 } from "../components/typography.module.css";
+import { animated } from 'react-spring'
 
 export const query = graphql`
   query ArchivePageQuery {
@@ -36,6 +36,11 @@ export const query = graphql`
   }
 `;
 
+const items = [
+  ({ style }) => <animated.h1 style={{ ...style, position: 'relative', fontSize: 75, marginBottom: 0}}>{"Projects"}</animated.h1>,
+  ({ style }) => <animated.p style={{ ...style, position: 'relative', }}>{"Here's some of the things I've been working on"}</animated.p>,
+]
+
 const ProjectsPage = props => {
   const { data, errors } = props;
   if (errors) {
@@ -48,10 +53,9 @@ const ProjectsPage = props => {
   const projectNodes =
     data && data.projects && mapEdgesToNodes(data.projects).filter(filterOutDocsWithoutSlugs);
   return (
-    <Layout>
+    <Layout showIntro={true} headerItems={items}>
       <SEO title="Projects" />
       <Container>
-        <h1 className={responsiveTitle1}>Projects</h1>
         {projectNodes && projectNodes.length > 0 && <ProjectPreviewGrid nodes={projectNodes} />}
       </Container>
     </Layout>

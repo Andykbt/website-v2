@@ -9,14 +9,13 @@ import wave from './assets/Purple_Waves_2.svg'
 import Socials from "../components/Social/Socials";
 import Footer from "./Footer/Footer";
 
-const Layout = ({ children, showNav, showIntro, siteTitle, siteSubtitle }) => (
+const Layout = ({ children, showIntro, siteTitle, siteSubtitle, headerItems }) => (
   <>
-    <Header siteTitle={siteTitle} siteSubtitle={siteSubtitle} showNav={showNav} showIntro={showIntro} />
-
+    <Header siteTitle={siteTitle} siteSubtitle={siteSubtitle} showIntro={showIntro} headerItems={headerItems} />
     <Socials />
+
     <div className={styles.content}>{children}</div>
     <footer className={styles.footer}>
-    {/* <footer className={styles.footer} style={{backgroundImage: `url(${wave})`}}> */}
       <img src={wave} />
       <div className={styles.footerWrapper}>
         <Footer/>

@@ -8,9 +8,8 @@ import * as styles from "./header.module.css";
 import { RiArrowDownSLine } from 'react-icons/ri'
 
 import wave from './assets/Purple_Waves_2.svg'
-import logo from './assets/logo.png'
 
-function Header({ showNav, siteTitle, siteSubtitle, showIntro }) {
+function Header({ showNav, siteTitle, siteSubtitle, showIntro, headerItems }) {
   const links = [
     {
       title: "Home",
@@ -22,12 +21,6 @@ function Header({ showNav, siteTitle, siteSubtitle, showIntro }) {
     },
   ];
 
-  const items = [
-    ({ style }) => <animated.h1 style={{ ...style, position: 'relative', fontSize: 75, marginBottom: 0}}>{siteTitle}</animated.h1>,
-    ({ style }) => <animated.p style={{ ...style, position: 'relative', }}>{siteSubtitle}</animated.p>,
-    ({ style }) => <animated.img src={logo} style={{ ...style, position: 'relative', width: 250, height: 250, borderRadius: '50%', backgroundColor: 'cyan'}}></animated.img>
-  ]
-
   const transitionRef = useSpringRef()
   const transitionRef1 = useSpringRef()
 
@@ -38,7 +31,7 @@ function Header({ showNav, siteTitle, siteSubtitle, showIntro }) {
     enter: { top: 0 },
   })
 
-  const transitions2 = useTransition(items, {
+  const transitions2 = useTransition(headerItems, {
     ref: transitionRef1,
     trail: 150,
     from:   { bottom: -100, opacity: 0 },
@@ -48,8 +41,9 @@ function Header({ showNav, siteTitle, siteSubtitle, showIntro }) {
   useChain([transitionRef, transitionRef1], [0, 0.75])
 
   return (
-    <div className={cn(styles.root, showIntro && styles.fullHeight)}>
-      {showIntro && <img src={wave} style={{transform: 'rotate(180deg)'}}></img>}
+    <div className={cn(styles.root, styles.fullHeight)}>
+      <img src={wave} style={{transform: 'rotate(180deg)'}}></img>
+
       <header>
         <div className={styles.wrapper}>
           <nav className={cn(styles.nav, showNav && styles.showNav)}>

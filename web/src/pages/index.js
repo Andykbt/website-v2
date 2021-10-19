@@ -12,6 +12,10 @@ import SEO from "../components/seo";
 import Layout from "../containers/layout";
 import Section from "../components/Section/Section";
 
+import { animated } from 'react-spring'
+
+import logo from '../components/assets/logo.png'
+
 export const query = graphql`
   query IndexPageQuery {
     site: sanitySiteSettings(_id: { regex: "/(drafts.|)siteSettings/" }) {
@@ -126,8 +130,14 @@ const IndexPage = props => {
     );
   }
 
+  const items = [
+    ({ style }) => <animated.h1 style={{ ...style, position: 'relative', fontSize: 75, marginBottom: 0}}>{site.title}</animated.h1>,
+    ({ style }) => <animated.p style={{ ...style, position: 'relative', }}>{site.subtitle}</animated.p>,
+    ({ style }) => <animated.img src={logo} style={{ ...style, position: 'relative', width: 250, height: 250, borderRadius: '50%', backgroundColor: 'cyan'}}></animated.img>
+  ]
+
   return (
-    <Layout showIntro={true}>
+    <Layout showIntro={true} headerItems={items}>
       <SEO title={site.title} description={site.description} keywords={site.keywords} />
       <Container>
         <Section
@@ -147,7 +157,7 @@ const IndexPage = props => {
           <ProjectPreviewGrid
             title="Some Things I've Built"
             nodes={projectNodes}
-            browseMoreHref="/archive/"
+            browseMoreHref="/projects/"
           />
         )}
 
